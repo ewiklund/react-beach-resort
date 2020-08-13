@@ -84,4 +84,23 @@ git remote add origin https://github.com/ewiklund/react-beach-resort.git
 
 Then go to Netlify and click on Create new site from Github
 Select Github from next page and select your repository. Then you need to Authorise and at the Create a new site, click on Show Advanced button and enter the same keys and values from the .env file. Then hit Deploy.
- 
+
+If your build fails; check the log:
+
+If the build failed with a warning about "process.env.CI = true", this is due to "create-react-app" treating warnings as errors when in CI. In order to fix this problem, please either:
+4:46:42 PM:     - Fix the issues highlighted by the warnings above.
+4:46:42 PM:     - Or modify the "scripts.build" command in your "package.json" from "react-scripts build" to "CI= react-scripts build"
+4:46:42 PM:   More information can be found at https://docs.netlify.com/configure-builds/troubleshooting-tips/#build-fails-on-warning-message
+
+What I ended up doing was:
+Edited the package.json:
+
+"scripts": {
+ "build": "CI= react-scripts build",
+
+run:
+git add .
+git commit -m "fix package.json"
+git push -u origin master
+
+This solved the problem!
