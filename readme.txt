@@ -72,5 +72,16 @@ export default createClient({
  accessToken: process.env.REACT_APP_ACCESS_TOKEN
 });
 
-Then in the .gitignore file; add .env under # testing 
+Then in the .gitignore file; add .env under # testing
+
+Create a new repository in Github.
+
+Then from the Terminal in Code; run:
+git add .
+git commit -m "react beach app"
+git remote add origin https://github.com/ewiklund/react-beach-resort.git 
+
+
+Then go to Netlify and click on Create new site from Github
+Select Github from next page and select your repository. Then you need to Authorise and at the Create a new site, click on Show Advanced button and enter the same keys and values from the .env file. Then hit Deploy.
  
