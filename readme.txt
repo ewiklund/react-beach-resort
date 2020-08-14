@@ -79,7 +79,8 @@ Create a new repository in Github.
 Then from the Terminal in Code; run:
 git add .
 git commit -m "react beach app"
-git remote add origin https://github.com/ewiklund/react-beach-resort.git 
+git remote add origin https://github.com/ewiklund/react-beach-resort.git
+git push -u origin master 
 
 
 Then go to Netlify and click on Create new site from Github
